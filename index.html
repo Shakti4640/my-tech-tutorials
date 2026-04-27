@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="icon" type="image/png" href="images/favicon.png">
+<title>Tech Mastery Hub</title>
+<style>
+  :root {
+    --bg: #0f1117;
+    --bg-alt: #151824;
+    --card: #1b1f2e;
+    --card-hover: #232840;
+    --border: #2a2f45;
+    --text: #e6e8ef;
+    --muted: #9aa0b4;
+    --accent: #7c9cff;
+    --accent-2: #9d7bff;
+    --tag: #2a3352;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background: radial-gradient(ellipse at top, #1a1f35 0%, var(--bg) 60%);
+    color: var(--text);
+    min-height: 100vh;
+    line-height: 1.6;
+    padding: 60px 24px;
+  }
+  .container { max-width: 1200px; margin: 0 auto; }
+  header { text-align: center; margin-bottom: 50px; }
+  header h1 {
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    font-weight: 700;
+    background: linear-gradient(135deg, var(--accent), var(--accent-2));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 16px;
+  }
+  header p {
+    color: var(--muted);
+    max-width: 720px;
+    margin: 0 auto;
+    font-size: 1.05rem;
+  }
+  .nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin: 40px 0 50px;
+  }
+  .nav a {
+    padding: 8px 16px;
+    background: var(--bg-alt);
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    color: var(--text);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: all 0.2s;
+  }
+  .nav a:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+    transform: translateY(-2px);
+  }
+  .section { margin-bottom: 60px; }
+  .section-header {
+    display: flex;
+    align-items: baseline;
+    gap: 16px;
+    margin-bottom: 24px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--border);
+    flex-wrap: wrap;
+  }
+  .section-header h2 { font-size: 1.5rem; font-weight: 600; }
+  .section-header span { color: var(--muted); font-size: 0.95rem; }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 18px;
+  }
+  .card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 22px;
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: all 0.25s ease;
+    min-height: 200px;
+  }
+  .card:hover {
+    background: var(--card-hover);
+    border-color: var(--accent);
+    transform: translateY(-4px);
+    box-shadow: 0 10px 30px rgba(124, 156, 255, 0.15);
+  }
+  .card.placeholder { opacity: 0.65; border-style: dashed; }
+  .card.placeholder:hover { transform: none; box-shadow: none; }
+  .card h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+    display: flex;
+    gap: 8px;
+    align-items: flex-start;
+  }
+  .card p { color: var(--muted); font-size: 0.92rem; margin-bottom: 18px; flex-grow: 1; }
+  .card-foot {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.82rem;
+  }
+  .tag {
+    background: var(--tag);
+    color: var(--accent);
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+  }
+  .arrow { color: var(--accent); font-weight: 600; }
+  footer {
+    text-align: center;
+    color: var(--muted);
+    margin-top: 60px;
+    padding-top: 30px;
+    border-top: 1px solid var(--border);
+    font-size: 0.9rem;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <header>
+    <h1>Tech Mastery Hub</h1>
+    <p>A curated portal of masterclasses and guides — algorithms, data engineering, ML, systems, DevOps, and more. Everything in one place.</p>
+  </header>
+
+  <nav class="nav">
+    <a href="#algorithms">🧩 Algorithms & Patterns</a>
+    <a href="#data">🧮 Data Engineering</a>
+    <a href="#ml">🤖 Machine Learning & AI</a>
+    <a href="#systems">🏛️ Systems & Architecture</a>
+    <a href="#devops">⚙️ DevOps & Infra</a>
+    <a href="#foundations">📐 Foundations</a>
+  </nav>
+
+  <section class="section" id="algorithms">
+    <div class="section-header">
+      <h2>🧩 Algorithms & Patterns</h2>
+      <span>Problem-solving blueprints — patterns you'll see in every interview</span>
+    </div>
+    <div class="grid">
+      <a class="card" href="https://shakti4640.github.io/leetcode-patterns-guide/">
+        <div>
+          <h3>💡 LeetCode Patterns Guide</h3>
+          <p>Core coding patterns — sliding window, two pointers, BFS/DFS, DP, and beyond. The mental models that unlock most interview problems.</p>
+        </div>
+        <div class="card-foot"><span class="tag">GUIDE</span><span class="arrow">→</span></div>
+      </a>
+      <a class="card" href="https://shakti4640.github.io/leetcode-patterns-guide-java/">
+        <div>
+          <h3>☕ LeetCode Patterns — Java Edition</h3>
+          <p>Same pattern playbook, implemented idiomatically in Java. Clean templates, time complexity notes, and Java-specific tricks.</p>
+        </div>
+        <div class="card-foot"><span class="tag">JAVA</span><span class="arrow">→</span></div>
+      </a>
+      <a class="card" href="https://shakti4640.github.io/graph-algorithms-masterclass/">
+        <div>
+          <h3>🕸️ Graph Algorithms Masterclass</h3>
+          <p>Traversals, shortest paths, MST, topological sort, union-find — every graph algorithm you need, with implementation and use cases.</p>
+        </div>
+        <div class="card-foot"><span class="tag">MASTERCLASS</span><span class="arrow">→</span></div>
+      </a>
+    </div>
+  </section>
+
+  <section class="section" id="data">
+    <div class="section-header">
+      <h2>🧮 Data Engineering</h2>
+      <span>Pipelines, warehouses, big data stacks — from Pandas to Spark to Kafka</span>
+    </div>
+    <div class="grid">
+      <a class="card" href="https://shakti4640.github.io/pandas-mastery-projects/">
+        <div>
+          <h3>🐼 Pandas Mastery Projects</h3>
+          <p>Hands-on Pandas projects covering real-world data wrangling — grouping, merging, time series, and performance tuning.</p>
+        </div>
+        <div class="card-foot"><span class="tag">PROJECTS</span><span class="arrow">→</span></div>
+      </a>
+      <a class="card" href="https://shakti4640.github.io/apache-spark-masterclass/">
+        <div>
+          <h3>⚡ Apache Spark Masterclass</h3>
+          <p>Spark architecture, RDDs, DataFrames, optimization, and structured streaming — the distributed compute engine end to end.</p>
+        </div>
+        <div class="card-foot"><span class="tag">MASTERCLASS</span><span class="arrow">→</span></div>
+      </a>
+      <a class="card" href="https://shakti4640.github.io/apache-hadoop-masterclass/">
+        <div>
+          <h3>🐘 Apache Hadoop Masterclass</h3>
+          <p>HDFS, MapReduce, YARN — the foundational big data stack that made modern data engineering possible.</p>
+        </div>
+        <div class="card-foot"><span class="tag">MASTERCLASS</span><span class="arrow">→</span></div>
+      </a>
+      <a class="card" href="https://shakti4640.github.io/apache-kafka-masterclass/">
+        <div>
+          <h3>🔀 Apache Kafka Masterclass</h3>
+          <p>Event streaming from the ground up — topics, partitions, consumer groups, exactly-once semantics, and production patterns.</p>
+        </div>
+        <div class="card-foot"><span class="tag">MASTERCLASS</span><span class="arrow">→</span></div>
+      </a>
+      <a class="card" href="https://shakti4640.github.io/data-engineer-aws-approach-masterclass/">
+        <div>
+          <h3>☁️ Data Engineer — AWS Approach</h3>
+          <p>Building data platforms on AWS — S3, Glue, EMR, Redshift, Athena, and Lake Formation tied together with real workflows.</p>
+        </div>
+        <div class="card-foot"><span class="tag">MASTERCLASS</span><span class="arrow">→</span></div>
+      </a>
+      <a class="card" href="https://shakti4640.github.io/data-engineer-masterclass-guide/">
+        <div>
+          <h3>📊 Data Engineer Masterclass Guide</h3>
+          <p>The complete data engineering playbook — ingestion, modeling, orchestration, quality, and observability across the modern stack.</p>
+        </div>
+        <div class="card-foot"><span class="tag">GUIDE</span><span class="arrow">→</span></div>
+      </a>
+    </div>
+  </section>
+
+  <section class="section" id="ml">
+    <div class="section-header">
+      <h2>🤖 Machine Learning & AI</h2>
+      <span>From scikit-learn basics to deep learning and LLM stacks</span>
+    </div>
+    <div class="grid">
+      <a class="card" href="https://shakti4640.github.io/scikit-learn-projects/index.html">
+        <div>
+          <h3>🧪 Scikit-Learn Projects</h3>
+          <p>Classical ML worked end to end — classification, regression, clustering, pipelines, and model evaluation with real datasets.</p>
+        </div>
+        <div class="card-foot"><span class="tag">PROJECTS</span><span class="arrow">→</span></div>
+      </a>
+      <a class="card" href="https://shakti4640.github.io/pytorch-masterclass-projects/">
+        <div>
+          <h3>🔥 PyTorch Masterclass Projects</h3>
+          <p>Deep learning with PyTorch — tensors, autograd, training loops, CNNs, RNNs, and transformers through practical projects.</p>
+        </div>
+        <div class="card-foot"><span class="tag">PROJECTS</span><span class="arrow">→</span></div>
+      </a>
+      <a class="card" href="https://shakti4640.github.io/tensorflow-masterclass-projects/">
+        <div>
+          <h3>🟧 TensorFlow Masterclass Projects</h3>
+          <p>Build and deploy models with TensorFlow and Keras — from sequential APIs to custom training loops and TF Serving.</p>
+        </div>
+        <div class="card-foot"><span class="tag">PROJECTS</span><span class="arrow">→</span></div>
+      </a>
+      <a class="card" href="https://shakti4640.github.io/AI-Frameworks-Flow-Diagrams/">
+        <div>
+          <h3>🧭 AI Frameworks — Flow Diagrams</h3>
+          <p>Visual walkthroughs of how modern AI frameworks fit together. Data in, model out — with every moving part illustrated.</p>
+        </div>
+        <div class="card-foot"><span class="tag">VISUAL</span><span class="arrow">→</span></div>
+      </a>
+      <a class="card" href="https://shakti4640.github.io/llm-build-stack-guide/">
+        <div>
+          <h3>🧠 LLM Build Stack Guide</h3>
+          <p>The full stack for building LLM apps — embeddings, vector stores, retrieval, agents, evaluation, and deployment patterns.</p>
+        </div>
+        <div class="card-foot"><span class="tag">GUIDE</span><span class="arrow">→</span></div>
+      </a>
+      <a class="card" href="https://shakti4640.github.io/bayes-theorem-mastery/">
+        <div>
+          <h3>🎲 Bayes Theorem Mastery</h3>
+          <p>Probability the Bayesian way — priors, posteriors, likelihoods, and the intuition behind inference in modern ML.</p>
+        </div>
+        <div class="card-foot"><span class="tag">MASTERY</span><span class="arrow">→</span></div>
+      </a>
+    </div>
+  </section>
+
+  <section class="section" id="systems">
+    <div class="section-header">
+      <h2>🏛️ Systems & Architecture</h2>
+      <span>Designing software and systems that scale</span>
+    </div>
+    <div class="grid">
+      <a class="card" href="https://shakti4640.github.io/software-architecture-design-guide/">
+        <div>
+          <h3>🏗️ Software Architecture Design Guide</h3>
+          <p>Architectural styles, patterns, and trade-offs — monoliths, microservices, event-driven, hexagonal, and beyond.</p>
+        </div>
+        <div class="card-foot"><span class="tag">GUIDE</span><span class="arrow">→</span></div>
+      </a>
+      <a class="card" href="https://shakti4640.github.io/system-design-masterclass/">
+        <div>
+          <h3>🌐 System Design Masterclass</h3>
+          <p>Scalable system design end to end — load balancing, caching, sharding, queues, and CAP-aware trade-offs with real case studies.</p>
+        </div>
+        <div class="card-foot"><span class="tag">MASTERCLASS</span><span class="arrow">→</span></div>
+      </a>
+      <a class="card" href="https://shakti4640.github.io/2d-3d-graphics-walkthrough-masterclass/">
+        <div>
+          <h3>🎨 2D &amp; 3D Graphics Walkthrough</h3>
+          <p>How graphics pipelines actually work — rasterization, shaders, transforms, and the math powering 2D and 3D rendering.</p>
+        </div>
+        <div class="card-foot"><span class="tag">MASTERCLASS</span><span class="arrow">→</span></div>
+      </a>
+      <a class="card" href="https://shakti4640.github.io/electronics-software-layers/">
+        <div>
+          <h3>🔌 Electronics &amp; Software Layers</h3>
+          <p>From transistors to userland — every abstraction layer between silicon and the apps we write, explained in context.</p>
+        </div>
+        <div class="card-foot"><span class="tag">REFERENCE</span><span class="arrow">→</span></div>
+      </a>
+    </div>
+  </section>
+
+  <section class="section" id="devops">
+    <div class="section-header">
+      <h2>⚙️ DevOps &amp; Infra</h2>
+      <span>Containers, orchestration, and platform certifications</span>
+    </div>
+    <div class="grid">
+      <a class="card" href="https://shakti4640.github.io/Redhat-certificate-masterclass/">
+        <div>
+          <h3>🎩 Red Hat Certificate Masterclass</h3>
+          <p>RHCSA and RHCE prep — Linux administration, systemd, networking, SELinux, and Ansible automation for certification.</p>
+        </div>
+        <div class="card-foot"><span class="tag">CERTIFICATION</span><span class="arrow">→</span></div>
+      </a>
+      <a class="card placeholder" href="#">
+        <div>
+          <h3>🐳 Docker Masterclass</h3>
+          <p>Coming soon — containers from the ground up. Images, layers, networking, volumes, and Compose workflows. URL to follow.</p>
+        </div>
+        <div class="card-foot"><span class="tag">COMING SOON</span><span class="arrow">→</span></div>
+      </a>
+      <a class="card placeholder" href="#">
+        <div>
+          <h3>☸️ Kubernetes Masterclass</h3>
+          <p>Coming soon — orchestration end to end. Pods, services, deployments, ingress, operators, and production patterns. URL to follow.</p>
+        </div>
+        <div class="card-foot"><span class="tag">COMING SOON</span><span class="arrow">→</span></div>
+      </a>
+    </div>
+  </section>
+
+  <section class="section" id="foundations">
+    <div class="section-header">
+      <h2>📐 Foundations</h2>
+      <span>Languages and low-level building blocks</span>
+    </div>
+    <div class="grid">
+      <a class="card" href="https://shakti4640.github.io/rust-programming-masterclass/">
+        <div>
+          <h3>🦀 Rust Programming Masterclass</h3>
+          <p>Systems programming the Rust way — ownership, borrowing, lifetimes, traits, and async — with hands-on projects throughout.</p>
+        </div>
+        <div class="card-foot"><span class="tag">MASTERCLASS</span><span class="arrow">→</span></div>
+      </a>
+    </div>
+  </section>
+
+  <footer>
+    23 resources · 6 categories · one hub to rule them all 🚀
+  </footer>
+
+</div>
+</body>
+</html>
